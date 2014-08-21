@@ -1,0 +1,6 @@
+.idea
+/nbproject/private/
+/nbproject
+test.php
+/docs
+apigen_report.xml
