@@ -4,7 +4,7 @@
 	if($_SERVER['REQUEST_METHOD'] != "POST"){
 		header("Location: http://www.castleblackgaming.com/dev/index.php");
 	}
-	if(!isset($_POST['emailPost']) || !isset($_POST['userPost']) || !isset($_POST['passPost'])){
+	if(!isset($_POST['emailPost']) || !isset($_POST['userPost']) || !isset($_POST['passPost']) || !isset($_POST['battlenetidPost'])){
 		$signupResult['error'] = "Information Error";
 		echo json_encode($signupResult);
 		exit();
@@ -15,6 +15,26 @@
 		echo json_encode($signupResult);
 		exit();
 	}
+	$hashtag = strpos($_POST['battlenetidPost'], "#");
+	$valid = true;
+	$len = 0;
+	$sub = "";
+	if($hashtag == false){
+		$valid = false;
+	}
+	else{
+		$sub = substr($_POST['battlenetidPost'], $hashtag + 1);
+		$len = strlen($sub);
+		if($len < 3 || $len > 5){
+			$valid = false;
+		} 
+	}
+	if($valid == false){
+		$signupResult['error'] = "Please enter a valid Batle.net Battletag";
+		echo json_encode($signupResult);
+		exit();
+	}
+	
 	$username="cbdb";
 	$password="CastleBlack111!";
 	$host="localhost";
@@ -43,17 +63,26 @@
 		echo json_encode($signupResult);
 		exit();
 	}
+	$query = "SELECT * FROM user WHERE battlenetid='" . $_POST['battlenetidPost']. "'";
+	$result = mysqli_query($con, $query);
+	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+	if($row != null){
+		$signupResult['error'] = "There is already an account associated with this Battle.Net ID.";
+		echo json_encode($signupResult);
+		exit();
+	}
 	
 	$un = $_POST['userPost'];
 	$pw = $_POST['passPost'];
 	$em = $_POST['emailPost'];
+	$bnid = $_POST['battlenetidPost'];
 	
 	$salt = uniqid(mt_rand(), true) . sha1(uniqid(mt_rand(), true));
 	$salt = hash('sha256', $salt);
 	$hash = $salt . $pw;
 	$hash = hash('sha256', $hash);	
 	$pw = $salt . $hash;
-	$query = "INSERT INTO `user`(`username`, `email`, `password`, `salt`) VALUES ('$un', '$em', '$pw', '$salt')";
+	$query = "INSERT INTO `user`(`username`, `battlenetid`, `email`, `password`, `salt`) VALUES ('$un', '$bnid', '$em', '$pw', '$salt')";
 	mysqli_query($con, $query);
 	$query = "SELECT id FROM user WHERE username='" . $un . "'";
 	$result = mysqli_query($con, $query);

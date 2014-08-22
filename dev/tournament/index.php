@@ -17,10 +17,9 @@
 		$query = "SELECT * FROM user WHERE id=" . $id;
 		$result = mysqli_query($con, $query);
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-		$_SESSION['first_name'] = $row['first_name'];
-		$_SESSION['last_name'] = $row['last_name'];
 		$_SESSION['username'] = $row['username'];
 		$_SESSION['pro'] = $row['pro'];
+		$_SESSION['battlenetid'] = $row['battlenetid'];
 	}
 ?>
 
@@ -36,11 +35,38 @@
 <body>
 
 <script type="text/javascript">
-	function selectText(textField) 
-	  {
-	    textField.focus();
-	    textField.select();
-	  }
+	function selectText(textField){
+		textField.focus();
+		textField.select();
+	}
+	function tourney(selection){
+		$.ajax({
+			type: "POST",
+			url: "http://www.castleblackgaming.com/dev/tournament/tourney.php",
+			async: false,
+			dataType: "json",
+			data: {func: selection},
+			success: function(obj, textstatus){
+				if('error' in obj){
+					switch(obj['error']){
+						case 'signin':
+							alert("Please sign into your account first.");
+							break;
+						case 'dup':
+							alert("You have already signed up.");
+							break;
+						case 'nostart':
+							alert("Tournament can't start now!");
+							break;
+						case 'noreport':
+							alert("No match to report!");
+							break;
+					}
+				}
+			}
+		});
+		window.location.href = window.location.href;
+	}
 </script>
 
 <div id="header">
@@ -82,7 +108,7 @@
     </li>
     <li><a href="#">FAQs</a></li>
     <li><a href="#">About</a></li>
-    <?php if(!isset($_SESSION['first_name'])){ ?>
+    <?php if(!isset($_SESSION['username'])){ ?>
 	    <li class="logreg"><a href="#">Sign Up</a>
 	      <ul class="register">
 	        <li>
@@ -124,11 +150,15 @@
   		require('BinaryBeast.php');
   		$bb = new BinaryBeast();
   		
-  		$tournament = $bb->tournament('xHotS1408191');
+  		$tournament = $bb->tournament->load('xHotS1408191');
   		
   	?>
+  	<button onclick="tourney('create')">Create Tournament</button>
+  	<button onclick="tourney('signup')">Sign Up</button><br />
   	<iframe src="tournament.php" class="binarybeast" width="800" height="600" scrolling="auto" frameborder="0">
-    </iframe>
+    </iframe><br />
+    <button onclick="tourney('start')">Start Tournament</button>
+    <button onclick="tourney('lost')">I Lost</button>
     <br>
   </div>
 </div>

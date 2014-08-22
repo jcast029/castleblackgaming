@@ -17,10 +17,9 @@
 		$query = "SELECT * FROM user WHERE id=" . $id;
 		$result = mysqli_query($con, $query);
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-		$_SESSION['first_name'] = $row['first_name'];
-		$_SESSION['last_name'] = $row['last_name'];
 		$_SESSION['username'] = $row['username'];
 		$_SESSION['pro'] = $row['pro'];
+		$_SESSION['battlenetid'] = $row['battlenetid'];
 	}
 ?>
 
@@ -83,7 +82,7 @@
     </li>
     <li><a href="#">FAQs</a></li>
     <li><a href="#">About</a></li>
-    <?php if(!isset($_SESSION['first_name'])){ ?>
+    <?php if(!isset($_SESSION['username'])){ ?>
 	    <li class="logreg"><a href="#">Sign Up</a>
 	      <ul class="register">
 	        <li>
@@ -108,6 +107,7 @@
     	    	<ul class="account">
     	    		<li>
     	    			<div id="loginBox">
+    	    			<a href="account_settings.php">Account Settings</a>
     	    			<a href="logout.php">Logout</a>
     	    			</div>
     	    		</li>
