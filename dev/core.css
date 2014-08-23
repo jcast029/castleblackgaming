@@ -20,7 +20,7 @@ body {
 	height:100px;
 }
 #header-logo {
-	width:200px;
+	width:389px;
 	float:left;
 	height:100px;
 }
@@ -244,7 +244,8 @@ td {
 	padding-top:20px;
 }
 .content-box {
-	width:1000px;
+	width:980px;
+	padding:10px;
 	margin-bottom:10px;
 	background-color: rgba(0, 0, 0, 0.6);
 	/* For earlier IE */
@@ -255,7 +256,10 @@ td {
     	color:#FFF;
     	font-family: 'Roboto Condensed';
     	font-weight: 600;
-    	text-align: center;
+}
+.content-box#garosh {
+	background-image:url(images/garosh-bg.jpg);
+	height:300px;
 }
 
 /* FORM ELEMENTS */
