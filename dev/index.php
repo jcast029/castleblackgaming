@@ -45,7 +45,7 @@
 
 <div id="header">
   <div id="header_content-container">
-    <div id="header-logo"><a href="http://www.castleblackgaming.com/dev/index.php"><img src="images/logo.png" width="184" height="91" /></a></div>
+    <div id="header-logo"><a href="http://www.castleblackgaming.com/dev/index.php"><img src="images/logo.png" width="389" height="91" /></a></div>
   </div>
 </div>
 <nav>
@@ -146,11 +146,7 @@ $('#clock').countdown('2014/10/10', function(event) {
 </script> 
     </div>
   </div>
-  <div class="empty-container">
-    <div>CURRENT NEWS &amp; UPDATES</div>
-  </div>
-  <div class="content-box accent"><br>
-    <br>
+  <div class="content-box accent" id="garosh"><br>
   </div>
 </div>
 </body>
