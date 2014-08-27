@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	date_default_timezone_set("America/Los_Angeles");
 	if($_SERVER['REQUEST_METHOD'] != "POST" || !isset($_POST['func'])){
 		header("Location: http://www.castleblackgaming.com/dev/index.php");
 	}
@@ -22,8 +23,15 @@
 			$tournament->title = $title_date;
 			$tournament->elimination = BinaryBeast::ELIMINATION_SINGLE;
 			$tournament->bronze = true;
+			$tournament->game_code = "HS";
+			$tournament->max_teams = 32;
 			if(!$tournament->save()){
+				//$aResult = array();
+				//$aResult['error'] = $bb->last_error;
+				//echo json_encode($aResult);
+				//exit();
 				var_dump($bb->last_error);
+				exit();
 			}
 			
 			$id = $tournament->id;
@@ -58,6 +66,7 @@
 			$team = $tournament->team();
 			$team->confirm();
 			$team->display_name = $_SESSION['battlenetid'];
+			$team->country_code = "USA";
 			if(!$tournament->save()){
 				var_dump($bb->last_error);
 			}
@@ -78,6 +87,7 @@
 			}
 			break;
 		case 'lost':
+			//Check if user is logged in. If not, ask user to log in. 
 			if(!isset($_SESSION['battlenetid'])){
 				$aResult = array();
 				$aResult['error'] = "signin";
@@ -91,42 +101,30 @@
 			$bb = new BinaryBeast();
 			$tournament = $bb->tournament->load($tid);
 			
-			foreach($tournament->open_matches() as $match){
-				if($match->team->display_name == $_SESSION['battlenetid']){
-					if(!$match->set_loser($match->team())){
+			$teams = $tournament->teams();
+			foreach($teams as $team){
+				if($team->display_name == $_SESSION['battlenetid']){
+					$match = $team->match;
+					if(!$match->set_loser($team)){
 						$aResult = array();
-						$aResult['error'] = "on set 1";
+						$aResult['error'] = "noreport";
 						echo json_encode($aResult);
 						exit();
 					}
 					if(!$match->report()){
 						$aResult = array();
-						$aResult['error'] = "on set 2";
+						$aResult['error'] = "noreport";
 						echo json_encode($aResult);
 						exit();
 					}
-					break;
+					exit();
 				}
-				else if($match->team2->display_name == $_SESSION['battlenetid']){
-					if(!$match->set_loser($match->team2())){
-						$aResult = array();
-						$aResult['error'] = "on set 2";
-						echo json_encode($aResult);
-						exit();
-					}
-					if(!$match->report()){
-						$aResult = array();
-						$aResult['error'] = "on report 2";
-						echo json_encode($aResult);
-						exit();
-					}
-					break;
-				}
+			}
 				$aResult = array();
 				$aResult['error'] = "noreport";
 				echo json_encode($aResult);
 				exit();
-			}
+			
 			break;
 	}
 ?>

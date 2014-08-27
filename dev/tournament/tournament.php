@@ -24,7 +24,8 @@
 	$stylesheet = substr($content, $left, $right - $left);
 	$stylesheetContent = file_get_contents($stylesheet);
 	$stylesheetContent = str_replace("url(/img/bg.jpg) top center #10110E", "transparent", $stylesheetContent);
-	$stylesheetContent = str_replace("#1A1A1A!important", "rgba(84, 42, 102, 0.2)", $stylesheetContent);
+	$stylesheetContent = str_replace("#1A1A1A!important", "rgba(84, 84, 84, 0.2)", $stylesheetContent);
+	$stylesheetContent = str_replace("text-align:left", "text-align:center", $stylesheetContent);
 	file_put_contents("style2.css", $stylesheetContent);
 	$content = str_replace($stylesheet, "style2.css", $content);
 	
@@ -43,5 +44,6 @@
 	
 	file_put_contents("style.css", $stylesheetContent);
 	$content = str_replace($stylesheet, "style.css", $content);
+	$content = str_replace("<img src=\"http://www.binarybeast.com/img/bb_logo_embed.png\" alt=\"Logo\"/>", "Binary Beast", $content);
 	echo $content;
 ?>

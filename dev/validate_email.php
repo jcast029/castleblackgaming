@@ -57,7 +57,8 @@
             min-height:1000px; 
             color:#fff; 
             font-family:Arial, Helvetica, sans-serif; 
-            font-size:14px;} 
+            font-size:14px;
+            text-align:center;} 
          
         .ExternalClass {width:100%;}
         .yshortcuts {color: #F00;}
@@ -66,7 +67,7 @@
     </style>
 	</head>
 	
-	<body style='background:#000; min-height:1000px; color:#fff;font-family:Arial, Helvetica, sans-serif; 
+	<body style='background:#000; min-height:750px; color:#fff;font-family:Arial, Helvetica, sans-serif; 
    font-size:12px' alink='#FF0000' link='#FF0000' bgcolor='#000000' text='#FFFFFF'>
    
    <span id='body_style' style='padding:15px; display:block'> 
@@ -77,9 +78,7 @@
 		Please verify your email by clicking <a href='http://www.castleblackgaming.com/dev/validate_email.php?v=".$verification."&id=".$id."'>HERE</a>
 		
 	</p>
-	<br>
 	 <p> Thanks,</p>
-	 <br>
 	 <p> CBG Dev Team </p>
 	 <p> <img src ='http://www.castleblackgaming.com/dev/images/logo.jpg' width='195' height='75' alt='Logo'></p>
 	 </span>

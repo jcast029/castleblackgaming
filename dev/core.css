@@ -6,6 +6,8 @@
 body {
 	margin:0;
 	background-image:url(images/CBG-backgound.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	background-color:#000;
 }
 
@@ -20,9 +22,10 @@ body {
 	height:100px;
 }
 #header-logo {
-	width:389px;
+	width:289px;
+	height:49px;
 	float:left;
-	height:100px;
+	margin:30px 0 0 15px;
 }
 nav {
 	width:100%;
@@ -57,8 +60,20 @@ nav ul li a {
     text-decoration:none;
     font-family: 'Roboto Condensed';
 }
+
+button.tournament {
+	font-size: 40px;
+	text-decoration: none;
+	background: transparent;
+	color: #FFF;
+	margin-left: auto;
+	margin-right: auto;
+	border: 7px;
+	border-color: white;
+	font-family: 'Roboto Condensed';
+}
   
-nav ul li a:hover {
+nav ul li a:hover{
 	transition:1s;
 	background-color: rgba(0, 0, 0, 0.4);
 	/* For earlier IE */
@@ -66,6 +81,15 @@ nav ul li a:hover {
     /* For IE 8*/
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 	}
+	
+button.tournament:hover {
+	transition: 0.5s;
+	background-color: rgba(222, 0, 0, 0.4);
+	/* For earlier IE */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
 	
 nav ul li.logreg {
 	float:right;
@@ -101,7 +125,7 @@ nav ul li:hover > ul {
     z-index: 1000px;
 }
      
-/* Fisrt Tier Dropdown */
+/* First Tier Dropdown */
 nav ul ul li {
     width:170px;
     float:none;
@@ -159,8 +183,7 @@ nav ul ul.register > li {
 	height:80px;
 	padding:10px;
 	font-size: 20px;
-	letter-spacing: 3px;
-	font-family: 'CODEBold', 'Helvetica';
+	font-family: 'Roboto Condensed';
 }
 #heroA-banner-subright {
 	float:right;
@@ -168,8 +191,6 @@ nav ul ul.register > li {
 	height:80px;
 	padding:0px;
 }
-
-
 
 #heroA-banner-subright span {
 	color:#FFF;
@@ -182,7 +203,7 @@ nav ul ul.register > li {
 
 table{
 	position: relative;
-	left: -50px;
+	left: -20px;
 	top: 5px;
 	border: 0px;
 	text-align: center;
@@ -198,7 +219,7 @@ td {
 	position: relative;
 	text-align: center;
 	color: white;
-	font-family: 'CODELight', 'Helvetica';
+	font-family: 'Roboto Condensed';
 	font-size: 15px;
 	top: -26px;
 	left: -23px;
@@ -256,10 +277,49 @@ td {
     	color:#FFF;
     	font-family: 'Roboto Condensed';
     	font-weight: 600;
+    	
 }
+
+.content-box-tournament {
+	width:980px;
+	padding:0;
+	margin-bottom:10px;
+	background-color: rgba(0, 0, 0, 0.6);
+	/* For earlier IE */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    	/* For IE 8*/
+    	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    	font-size: 20px;
+    	color:#FFF;
+    	font-family: 'Roboto Condensed';
+    	font-weight: 600;
+	text-align: center;
+}
+
 .content-box#garosh {
 	background-image:url(images/garosh-bg.jpg);
+	font-family: 'Roboto Condensed';
 	height:300px;
+}
+#garosh h1 {
+	margin:0 0 0 10px;
+	padding:0;
+	font-size:36px;
+	color:#FFF;
+}
+#garosh h2 {
+	margin:0 0 0 10px;
+	padding:0;
+	font-size:28px;
+	color:#FC3;
+}
+#garosh p {
+	margin:0 0 0 10px;
+}
+
+#tournament {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* FORM ELEMENTS */

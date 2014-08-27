@@ -27,7 +27,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Castle Black Gaming</title>
+<link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
 <link href="core.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="//code.jquery.com/jquery.js"></script>
 <script src="/dev/js/jquery.countdown.js"></script>
@@ -45,7 +46,7 @@
 
 <div id="header">
   <div id="header_content-container">
-    <div id="header-logo"><a href="http://www.castleblackgaming.com/dev/index.php"><img src="images/logo.png" width="389" height="91" /></a></div>
+    <div id="header-logo"><a href="http://www.castleblackgaming.com/dev/index.php"><img src="images/logo.png" width="289" height="49" /></a></div>
   </div>
 </div>
 <nav>
@@ -146,7 +147,19 @@ $('#clock').countdown('2014/10/10', function(event) {
 </script> 
     </div>
   </div>
-  <div class="content-box accent" id="garosh"><br>
+  <div class="content-box accent" id="garosh">
+    <h1>$250 CASH PRIZE</h1>
+    <h2>Weekly Freeroll<br>
+    Tournaments!</h2>
+    <p>Earn your way into our
+    month <br>
+    end $250 cash
+    prize tournament<br>
+    by
+    participating in our
+    weekly<br>
+    freeroll tournaments.</p>
+    <p>&nbsp;</p>
   </div>
 </div>
 </body>
