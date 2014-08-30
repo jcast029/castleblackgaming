@@ -62,15 +62,17 @@ nav ul li a {
 }
 
 button.tournament {
-	font-size: 40px;
+	font-size: 18px;
 	text-decoration: none;
-	background: transparent;
-	color: #FFF;
+	height: 50px;
+	width: 115px;
+	background: rgba(16, 16, 16, 0.50);
+	color: white;
 	margin-left: auto;
 	margin-right: auto;
-	border: 7px;
-	border-color: white;
-	font-family: 'Roboto Condensed';
+	font-family: 'Arial';
+	border: 1px solid #262626;
+	bottom-margin: -50px;
 }
   
 nav ul li a:hover{
@@ -277,7 +279,7 @@ td {
     	color:#FFF;
     	font-family: 'Roboto Condensed';
     	font-weight: 600;
-    	
+    	overflow: auto;
 }
 
 .content-box-tournament {
@@ -294,10 +296,21 @@ td {
     	font-family: 'Roboto Condensed';
     	font-weight: 600;
 	text-align: center;
+	overflow: auto;
 }
 
 .content-box#garosh {
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
 	background-image:url(images/garosh-bg.jpg);
+	/* For earlier IE */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    	/* For IE 8*/
+    	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    	-webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
 	font-family: 'Roboto Condensed';
 	height:300px;
 }
@@ -320,6 +333,43 @@ td {
 #tournament {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.content-box > #left_settings {
+	float: left;
+	display: inline-block;
+	width: 25%;
+}
+
+.content-box > #right_settings {
+	float: right; 
+	display: inline-block;
+	width: 75%;
+}
+
+#left_settings ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#horizontal-grouper {
+}
+
+#twitter-div {
+	display: inline-block;
+	position: relative;
+	right: 50px;
+	width: 300px;
+	height: 320px;
+}
+
+#ads {
+	display: inline-block;
+	position: relative;
+	left: 50px;
+	width: 300px;
+	height: 320px;
 }
 
 /* FORM ELEMENTS */

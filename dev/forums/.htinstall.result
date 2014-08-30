@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+
+<title>Configuration file</title>
+
+<link href="../adm/style/admin.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript">
+// <![CDATA[
+
+/**
+* Set display of page element
+* s[-1,0,1] = hide,toggle display,show
+*/
+function dE(n, s, type)
+{
+	if (!type)
+	{
+		type = 'block';
+	}
+
+	var e = document.getElementById(n);
+	if (!s)
+	{
+		s = (e.style.display == '' || e.style.display == 'block') ? -1 : 1;
+	}
+	e.style.display = (s == 1) ? type : 'none';
+}
+
+// ]]>
+</script>
+
+</head>
+
+<body class="ltr">
+<div id="wrap">
+	<div id="page-header">
+		<h1>Installation Panel</h1>
+		<p id="skip"><a href="#acp">Skip to content</a></p>
+		
+	</div>
+	
+	<div id="page-body">
+		<div id="tabs">
+			<ul>
+			
+				<li><a href="index.php?mode=overview&amp;language=en"><span>Overview</span></a></li>
+			
+				<li id="activetab"><a href="index.php?mode=install&amp;language=en"><span>Install</span></a></li>
+			
+				<li><a href="index.php?mode=convert&amp;language=en"><span>Convert</span></a></li>
+			
+			</ul>
+		</div>
+
+		<div id="acp">
+		<div class="panel">
+			<span class="corners-top"><span></span></span>
+				<div id="content">
+					<div id="menu">
+						<ul>
+						
+							<li><span class="completed">Introduction</span></li>
+						
+							<li><span class="completed">Requirements</span></li>
+						
+							<li><span class="completed">Database settings</span></li>
+						
+							<li><span class="completed">Administrator details</span></li>
+						
+							<li id="activemenu"><span>Configuration file</span></li>
+						
+							<li><span>Advanced settings</span></li>
+						
+							<li><span>Create database tables</span></li>
+						
+							<li><span>Final stage</span></li>
+						
+						</ul>
+					</div>
+	
+					<div id="main" class="install-body">
+
+<form id="install_install" method="post" action="index.php?mode=install&amp;sub=advanced" onsubmit="submit.disabled = 'disabled';">
+
+<p>The configuration file has been written. You may now proceed to the next step of the installation.</p>
+	<fieldset class="submit-buttons">
+		<legend>Proceed to next step</legend>
+		<input type="hidden" name="language" value="" /><input type="hidden" name="dbms" value="mysqli" /><input type="hidden" name="dbhost" value="localhost" /><input type="hidden" name="dbport" value="" /><input type="hidden" name="dbname" value="cbgaming_bb1" /><input type="hidden" name="dbuser" value="cbgaming_bb1" /><input type="hidden" name="dbpasswd" value="N(PG97iapN45~*5" /><input type="hidden" name="table_prefix" value="bb_" /><input type="hidden" name="default_lang" value="en" /><input type="hidden" name="admin_name" value="cbgaming" /><input type="hidden" name="admin_pass1" value="CastleBlack111!" /><input type="hidden" name="admin_pass2" value="CastleBlack111!" /><input type="hidden" name="board_email1" value="contact@castleblackgaming.com" /><input type="hidden" name="board_email2" value="contact@castleblackgaming.com" />
+		<input class="button1" type="submit" id="submit" onclick="this.className = 'button1 disabled';" name="submit" value="Proceed to next step" />
+	</fieldset>
+
+
+</form>
+
+</div>
+				</div>
+			<span class="corners-bottom"><span></span></span>
+			<div class="clear"></div>
+		</div>
+		</div>
+	</div>
+
+	<div id="page-footer">
+		Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Group
+	</div>
+</div>
+
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+
+<title>Create database tables</title>
+
+<link href="../adm/style/admin.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript">
+// <![CDATA[
+
+/**
+* Set display of page element
+* s[-1,0,1] = hide,toggle display,show
+*/
+function dE(n, s, type)
+{
+	if (!type)
+	{
+		type = 'block';
+	}
+
+	var e = document.getElementById(n);
+	if (!s)
+	{
+		s = (e.style.display == '' || e.style.display == 'block') ? -1 : 1;
+	}
+	e.style.display = (s == 1) ? type : 'none';
+}
+
+// ]]>
+</script>
+
+</head>
+
+<body class="ltr">
+<div id="wrap">
+	<div id="page-header">
+		<h1>Installation Panel</h1>
+		<p id="skip"><a href="#acp">Skip to content</a></p>
+		
+	</div>
+	
+	<div id="page-body">
+		<div id="tabs">
+			<ul>
+			
+				<li><a href="index.php?mode=overview&amp;language=en"><span>Overview</span></a></li>
+			
+				<li id="activetab"><a href="index.php?mode=install&amp;language=en"><span>Install</span></a></li>
+			
+				<li><a href="index.php?mode=convert&amp;language=en"><span>Convert</span></a></li>
+			
+			</ul>
+		</div>
+
+		<div id="acp">
+		<div class="panel">
+			<span class="corners-top"><span></span></span>
+				<div id="content">
+					<div id="menu">
+						<ul>
+						
+							<li><span class="completed">Introduction</span></li>
+						
+							<li><span class="completed">Requirements</span></li>
+						
+							<li><span class="completed">Database settings</span></li>
+						
+							<li><span class="completed">Administrator details</span></li>
+						
+							<li><span class="completed">Configuration file</span></li>
+						
+							<li><span class="completed">Advanced settings</span></li>
+						
+							<li id="activemenu"><span>Create database tables</span></li>
+						
+							<li><span>Final stage</span></li>
+						
+						</ul>
+					</div>
+	
+					<div id="main" class="install-body">
+
+<form id="install_install" method="post" action="index.php?mode=install&amp;sub=final" onsubmit="submit.disabled = 'disabled';">
+
+<p>The database tables used by phpBB 3.0 have been created and populated with some initial data. Proceed to the next screen to finish installing phpBB.</p>
+	<fieldset class="submit-buttons">
+		<legend>Proceed to next step</legend>
+		<input type="hidden" name="language" value="" />
+<input type="hidden" name="dbms" value="mysqli" />
+<input type="hidden" name="dbhost" value="localhost" />
+<input type="hidden" name="dbport" value="" />
+<input type="hidden" name="dbuser" value="cbgaming_bb1" />
+<input type="hidden" name="dbpasswd" value="N(PG97iapN45~*5" />
+<input type="hidden" name="dbname" value="cbgaming_bb1" />
+<input type="hidden" name="table_prefix" value="bb_" />
+<input type="hidden" name="default_lang" value="en" />
+<input type="hidden" name="admin_name" value="cbgaming" />
+<input type="hidden" name="admin_pass1" value="CastleBlack111!" />
+<input type="hidden" name="admin_pass2" value="CastleBlack111!" />
+<input type="hidden" name="board_email1" value="contact@castleblackgaming.com" />
+<input type="hidden" name="board_email2" value="contact@castleblackgaming.com" />
+<input type="hidden" name="img_imagick" value="" />
+<input type="hidden" name="ftp_path" value="" />
+<input type="hidden" name="ftp_user" value="" />
+<input type="hidden" name="ftp_pass" value="" />
+<input type="hidden" name="email_enable" value="1" />
+<input type="hidden" name="smtp_delivery" value="0" />
+<input type="hidden" name="smtp_host" value="" />
+<input type="hidden" name="smtp_auth" value="PLAIN" />
+<input type="hidden" name="smtp_user" value="" />
+<input type="hidden" name="smtp_pass" value="" />
+<input type="hidden" name="cookie_secure" value="0" />
+<input type="hidden" name="force_server_vars" value="0" />
+<input type="hidden" name="server_protocol" value="http://" />
+<input type="hidden" name="server_name" value="castleblackgaming.com" />
+<input type="hidden" name="server_port" value="80" />
+<input type="hidden" name="script_path" value="/dev/forums" />
+
+		<input class="button1" type="submit" id="submit" onclick="this.className = 'button1 disabled';" name="submit" value="Proceed to next step" />
+	</fieldset>
+
+
+</form>
+
+</div>
+				</div>
+			<span class="corners-bottom"><span></span></span>
+			<div class="clear"></div>
+		</div>
+		</div>
+	</div>
+
+	<div id="page-footer">
+		Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Group
+	</div>
+</div>
+
+</body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+
+<title>Final stage</title>
+
+<link href="../adm/style/admin.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script type="text/javascript">
+// <![CDATA[
+
+/**
+* Set display of page element
+* s[-1,0,1] = hide,toggle display,show
+*/
+function dE(n, s, type)
+{
+	if (!type)
+	{
+		type = 'block';
+	}
+
+	var e = document.getElementById(n);
+	if (!s)
+	{
+		s = (e.style.display == '' || e.style.display == 'block') ? -1 : 1;
+	}
+	e.style.display = (s == 1) ? type : 'none';
+}
+
+// ]]>
+</script>
+
+</head>
+
+<body class="ltr">
+<div id="wrap">
+	<div id="page-header">
+		<h1>Installation Panel</h1>
+		<p id="skip"><a href="#acp">Skip to content</a></p>
+		
+	</div>
+	
+	<div id="page-body">
+		<div id="tabs">
+			<ul>
+			
+				<li><a href="index.php?mode=overview&amp;language=en"><span>Overview</span></a></li>
+			
+				<li id="activetab"><a href="index.php?mode=install&amp;language=en"><span>Install</span></a></li>
+			
+				<li><a href="index.php?mode=convert&amp;language=en"><span>Convert</span></a></li>
+			
+			</ul>
+		</div>
+
+		<div id="acp">
+		<div class="panel">
+			<span class="corners-top"><span></span></span>
+				<div id="content">
+					<div id="menu">
+						<ul>
+						
+							<li><span class="completed">Introduction</span></li>
+						
+							<li><span class="completed">Requirements</span></li>
+						
+							<li><span class="completed">Database settings</span></li>
+						
+							<li><span class="completed">Administrator details</span></li>
+						
+							<li><span class="completed">Configuration file</span></li>
+						
+							<li><span class="completed">Advanced settings</span></li>
+						
+							<li><span class="completed">Create database tables</span></li>
+						
+							<li id="activemenu"><span>Final stage</span></li>
+						
+						</ul>
+					</div>
+	
+					<div id="main" class="install-body">
+
+<form id="install_install" method="post" action="./../adm/index.php?i=send_statistics&amp;mode=send_statistics&amp;sid=2034c6ab2a02218f9741783833fff8bb" onsubmit="submit.disabled = 'disabled';">
+
+<h1>Congratulations!</h1><p>
+		You have successfully installed phpBB 3.0.12. Please proceed by choosing one of the following options:</p>
+		<h2>Convert an existing board to phpBB3</h2>
+		<p>The phpBB Unified Convertor Framework supports the conversion of phpBB 2.0.x and other board systems to phpBB3. If you have an existing board that you wish to convert, please <a href="./../install/index.php?mode=convert&amp;language=&amp;sid=2034c6ab2a02218f9741783833fff8bb">proceed to the convertor</a>.</p>
+		<h2>Go live with your phpBB3!</h2>
+		<p>Clicking the button below will take you to a form for submitting statistical data to phpBB in your Administration Control Panel (ACP). We would appreciate it if you could help us by sending that information. Afterwards you should take some time to examine the options available to you. Remember that help is available online via the <a href="https://www.phpbb.com/support/documentation/3.0/">Documentation</a>, <a href="../docs/README.html">README</a> and the <a href="https://www.phpbb.com/community/viewforum.php?f=46">Support Forums</a>.</p><p><strong>Please delete, move or rename the install directory before using your board. While this directory exists, only the Administration Control Panel (ACP) will be accessible.</strong></p>
+	<fieldset class="submit-buttons">
+		<legend>Login</legend>
+		
+		<input class="button1" type="submit" id="submit" onclick="this.className = 'button1 disabled';" name="submit" value="Login" />
+	</fieldset>
+
+
+</form>
+
+</div>
+				</div>
+			<span class="corners-bottom"><span></span></span>
+			<div class="clear"></div>
+		</div>
+		</div>
+	</div>
+
+	<div id="page-footer">
+		Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Group
+	</div>
+</div>
+
+</body>
+</html>

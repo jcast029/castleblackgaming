@@ -74,7 +74,7 @@
         <li><a href="#">Rules</a></li>
       </ul>
     </li>
-    <li><a href="#">Forums</a></li>
+    <li><a href="http://www.castleblackgaming.com/dev/forums">Forums</a></li>
     <li><a href="#">Streams</a></li>
     <li><a href="#">Guides</a>
       <ul>
@@ -147,6 +147,9 @@ $('#clock').countdown('2014/10/10', function(event) {
 </script> 
     </div>
   </div>
+</div>
+  <div id="horizontal-grouper">
+  <div id="ads">ads</div>
   <div class="content-box accent" id="garosh">
     <h1>$250 CASH PRIZE</h1>
     <h2>Weekly Freeroll<br>
@@ -161,6 +164,12 @@ $('#clock').countdown('2014/10/10', function(event) {
     freeroll tournaments.</p>
     <p>&nbsp;</p>
   </div>
+  
+  <div id="twitter-div">
+	<a class="twitter-timeline" href="https://twitter.com/CBlackgaming" data-widget-id="505510568359260160">Tweets by @CBlackgaming</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</div>
+</div>
 </div>
 </body>
 </html>

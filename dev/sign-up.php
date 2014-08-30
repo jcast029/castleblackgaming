@@ -72,6 +72,9 @@
 		//Pass along verification string for added security.
 		document.getElementById("verificationString").value = verification;
 		document.getElementById("idNum").value = id;
+		if(success){
+			window.location.href = "./validate_email.php";
+		}
 		return success;
 	}
 </script>
