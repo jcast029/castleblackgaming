@@ -1,0 +1,536 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+@import 'jquery.countdown.css';
+
+/* CSS Document */
+body {
+	margin:0;
+	background-image:url(images/CBG-backgound.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-color:#000;
+}
+
+#header {
+	width:100%;
+	height:100px;
+	background-color:#000;
+}
+#header_content-container {
+	width:1000px;
+	margin:auto;
+	height:100px;
+}
+#header-logo {
+	width:289px;
+	height:49px;
+	float:left;
+	margin:30px 0 0 15px;
+}
+nav {
+	width:100%;
+	height:42px;
+	background-image:url(images/nav_bg.png);
+	-webkit-box-shadow: 0px 8px 5px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 8px 5px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px 8px 5px -4px rgba(0,0,0,0.75);
+}
+	
+nav ul {
+	width:1000px;
+    padding:0;
+    margin:0 auto;
+    list-style: none;
+    position: relative;
+    display:block;
+    }
+     
+nav ul li {
+    float:left;
+    display:list-item;
+    list-style: none; 
+    }
+  
+nav ul li a {
+    display:block;
+    padding:7px 16px;  
+    height:28px;
+    color:#FFF;
+    font-size:20px;
+    text-decoration:none;
+    font-family: 'Roboto Condensed';
+}
+
+button.tournament {
+	font-size: 18px;
+	text-decoration: none;
+	height: 50px;
+	width: 115px;
+	background: rgba(16, 16, 16, 0.50);
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Arial';
+	border: 1px solid #262626;
+	bottom-margin: -50px;
+}
+  
+nav ul li a:hover{
+	transition:1s;
+	background-color: rgba(0, 0, 0, 0.4);
+	/* For earlier IE */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+	}
+	
+button.tournament:hover {
+	transition: 0.5s;
+	background-color: rgba(222, 0, 0, 0.4);
+	/* For earlier IE */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+	
+nav ul li.logreg {
+	float:right;
+	background-color:#000;
+	background-color: rgba(0, 0, 0, 0.2);
+	margin-left:1px;
+}
+/* Hide Dropdowns by Default */
+nav ul ul {
+    display: none;
+    position: absolute; top: 42px;
+    z-index: 1000;
+}
+nav ul ul.login {
+	display: none;
+	position: absolute; top: 42px; right:0px;
+	width:330px;
+}
+nav ul ul.register {
+	display: none;
+	position: absolute; top: 42px; right:0px;
+	width:330px;
+}
+
+nav ul ul.account {
+	display: none;
+	position: absolute; top: 42px;
+}
+     
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+    display:list-item;
+    z-index: 1000px;
+}
+     
+/* First Tier Dropdown */
+nav ul ul li {
+    width:170px;
+    float:none;
+	background-color: rgba(0, 0, 0, 1);
+	/* For earlier IE */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    position: relative;
+    border-bottom:none;
+}
+nav ul ul li a {
+	padding:8px 10px;
+	font-size:16px;
+	height:21px;
+}
+nav ul ul li a:hover {
+    background-color: #810104;
+	transition:0.5s;
+}
+nav ul ul.login > li {
+	width:330px;
+}
+nav ul ul.register > li {
+	width:330px;
+}
+
+/* Index */
+#heroA_banner {
+	width:1000px;
+	height:100px;
+	color:#FFF;
+	background-image: url(images/heroA_banner.png);
+	margin-bottom:10px;
+}
+
+@font-face {
+	font-family: CODEBold;
+	src: url(CODEBold.woff);
+}
+
+@font-face {
+	font-family: AmericanCaptain;
+	src: url(AmericanCaptain.woff);
+}
+
+@font-face {
+	font-family: CODELight;
+	src: url(CODELight.woff);
+}
+
+#heroA-banner-subleft {
+	float:left;
+	width:380px;
+	height:80px;
+	padding:10px;
+	font-size: 20px;
+	font-family: 'Roboto Condensed';
+}
+#heroA-banner-subright {
+	float:right;
+	width:580px;
+	height:80px;
+	padding:0px;
+}
+
+#heroA-banner-subright span {
+	color:#FFF;
+	font-family: 'AmericanCaptain','Helvetica';
+	display:inline-block;
+    font-size: 38px;
+    line-height: 2em;
+    padding: 0 15px 0 0;
+}
+
+table{
+	position: relative;
+	left: -20px;
+	top: 5px;
+	border: 0px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+td {
+	width: 85px;
+}
+
+.clockLabel{
+	position: relative;
+	text-align: center;
+	color: white;
+	font-family: 'Roboto Condensed';
+	font-size: 15px;
+	top: -26px;
+	left: -23px;
+}
+
+#daysLabel {
+	position: relative;
+	left: -22px;
+}
+
+#secondsLabel {
+	position: relative;
+	left: -18px;
+}
+
+
+/* Content */
+
+#content-container {
+	width:1000px;
+	padding:20px 10px 10px 10px;
+	margin:auto;
+}
+#content-container > div.accent {
+	-webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+}
+.empty-container {
+	width:1000px;
+	height:54px;
+	margin-bottom:10px;
+	overflow:hidden;
+}
+.empty-container > div {
+	float:left;
+	width:600px;
+	height:30px;
+	font-size:28px;
+	color:#FFF;
+	font-family: 'Roboto Condensed';
+	font-weight:700;
+	padding-top:20px;
+}
+.content-box {
+	width:980px;
+	padding:10px;
+	margin-bottom:10px;
+	background-color: rgba(0, 0, 0, 0.6);
+	/* For earlier IE */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    	font-size: 20px;
+    	color:#FFF;
+    	font-family: 'Roboto Condensed';
+    	font-weight: 600;
+    	overflow: auto;
+}
+
+.content-box-tournament {
+	width:980px;
+	padding:0;
+	margin-bottom:10px;
+	background-color: rgba(0, 0, 0, 0.6);
+	/* For earlier IE */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    	/* For IE 8*/
+    	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    	font-size: 20px;
+    	color:#FFF;
+    	font-family: 'Roboto Condensed';
+    	font-weight: 600;
+	text-align: center;
+	overflow: auto;
+}
+
+.content-box#garosh {
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+	background-image:url(images/garosh-bg.jpg);
+	/* For earlier IE */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    	/* For IE 8*/
+    	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    	-webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+	font-family: 'Roboto Condensed';
+	height:300px;
+	display: inline-block;
+}
+#garosh h1 {
+	margin:0 0 0 10px;
+	padding:0;
+	font-size:36px;
+	color:#FFF;
+}
+#garosh h2 {
+	margin:0 0 0 10px;
+	padding:0;
+	font-size:28px;
+	color:#FC3;
+}
+#garosh p {
+	margin:0 0 0 10px;
+}
+
+#tournament {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.content-box > #left_settings {
+	float: left;
+	display: inline-block;
+	width: 25%;
+}
+
+.content-box > #right_settings {
+	float: right; 
+	display: inline-block;
+	width: 75%;
+}
+
+#left_settings ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#horizontal-grouper {
+	width: 1000px;
+	height: 320px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#twitter-div {
+/* For earlier IE */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    	/* For IE 8*/
+    	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    	-webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+	display: inline-block;
+	float: right;
+	position: relative;
+	right: 0px;
+	width: 33%;
+	height: 270px;
+	padding 2px;
+}
+
+#scroller-wrap {
+/* For earlier IE */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    	/* For IE 8*/
+    	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    	-webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+   	 background: transparent;
+	display: inline-block;
+	float: left;
+	
+	position: relative;
+	left: 0px;
+	width: 65%;
+	height: 265px;
+	padding: 5px;
+}
+
+#scroller {
+	overflow: hidden;
+	color: #FFF;
+	font-family: 'Roboto Condensed';
+	font-size: 25px;
+	font-weight: 600;
+}
+
+#scroller ul li img {
+	height: 265px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+#scroller ul{
+	list-style-type: none;
+}
+
+#ads {
+        /* For earlier IE */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    	/* For IE 8*/
+    	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    	-webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+        -moz-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+        box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75),inset 0px 0px 6px 0px rgba(255, 255, 255, 0.75);
+	display: inline-block;
+	position: relative;
+	left: 15px;
+	top: 15px;
+	width: 680px;
+	height: 75px;
+	background: rgba(0, 0, 0, 0.6);
+	padding 5px 5px 5px 5px;
+	font-family: 'Roboto Condensed';
+	font-size: 50px;
+	color: #FFF;
+	text-align: center;
+}
+
+/* FORM ELEMENTS */
+
+#login-reg_container {
+	width:400px;
+	height:20px;
+}
+
+/* Login Form */
+#loginForm {
+    width:318px; 
+    padding:4px 6px;
+    z-index: 1000;
+}
+
+#loginForm fieldset {
+    margin:0 0 10px 0;
+    display:block;
+    border:0;
+    padding:0;
+}
+
+fieldset#body {
+    padding:8px 13px;
+    margin:0;
+}
+
+#loginForm #checkbox {
+    width:auto;
+    margin:1px 9px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+#remember-fontfix {
+	font-size:12px;
+}
+
+#body label {
+    color:#FFF;
+	font-family: 'Roboto Condensed';
+    margin:7px 0 0 0;
+    display:block;
+    float:left;
+}
+
+#loginForm #body fieldset label {
+    display:block;
+    float:none;
+    margin:0 0 4px 0;
+}
+
+/* Default Input */
+#loginForm .txtfield {
+    width:92%;
+    border:1px solid #899caa;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    color:#3a454d;
+    font-weight:bold;
+    padding:5px 8px;
+    box-shadow:inset 0px 1px 3px #bbb;
+    -webkit-box-shadow:inset 0px 1px 3px #bbb;
+    -moz-box-shadow:inset 0px 1px 3px #bbb;
+    font-size:12px;
+}
+
+/* Sign In Button */
+#loginForm #submit {
+	text-decoration: none;
+	background:none;
+    cursor: pointer;
+    text-align:center;
+	display:block;
+	border:0;
+	width:100%;
+	padding:5px 0;
+	color:#FFF;
+	font-family: 'Roboto Condensed';
+}
+#loginForm #submit:hover {
+	background-color: #810104;
+	transition:0.5s;
+}
+/* Forgot your password */
+#loginForm span {
+    text-align:center;
+    display:block;
+    padding:2px 0 2px 0;
+}
+
+#loginForm span a {
+    color:#FFF;
+    font-size:12px;
+}
+input:focus {
+    outline:none;
+}
