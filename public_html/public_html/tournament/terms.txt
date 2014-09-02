@@ -1,0 +1,9 @@
+This library is dual-licensed under MIT and GPL
+
+In short, this means that you can use and modify this library freely
+
+however you can not use it for profit without compenating BinaryBeast
+
+Some links for clarification and legal details:
+http://www.opensource.org/licenses/mit-license.php
+http://www.gnu.org/licenses/gpl.html

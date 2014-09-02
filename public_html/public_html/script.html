@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+$('#clock').countdown('2020/10/10', function(event) {
+  var $this = $(this).html(event.strftime(''
+    + '<span>%D</span> days '
+    + '<span>%H</span> hr '
+    + '<span>%M</span> min '
+    + '<span>%S</span> sec'));
+});
+<body>
+</body>
+</html>
