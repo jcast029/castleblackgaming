@@ -163,6 +163,15 @@ nav ul ul.register > li {
 	margin-bottom:10px;
 }
 
+#heroA_banner_tourney {
+	width:980px;
+	height:40px;
+	color:#FFF;
+	background: transparent;
+	margin-bottom:10px;
+	text-align: center;
+}
+
 @font-face {
 	font-family: CODEBold;
 	src: url(CODEBold.woff);
@@ -193,7 +202,21 @@ nav ul ul.register > li {
 	padding:0px;
 }
 
-#heroA-banner-subright span {
+#heroA-banner-subright-tourney {
+	width:580px;
+	height:0px;
+	padding:0px;
+}
+
+#heroA-banner-subright-tourney #clock {
+	position: absolute;
+	left: 800px;
+	top: 260px;
+	margin: 0;
+	padding: 0;
+}
+
+#heroA-banner-subright span, #heroA-banner-subright-tourney span {
 	color:#FFF;
 	font-family: 'AmericanCaptain','Helvetica';
 	display:inline-block;

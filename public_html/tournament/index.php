@@ -99,7 +99,7 @@
 
 <?php
 	if(isset($_SESSION['username'])){
-		echo "<script> window.setInterval(function(){updateTournament()}, 10000);</script>";
+		echo "<script> window.setInterval(function(){updateTournament()}, 2000);</script>";
 	}
 ?>
 
@@ -163,7 +163,7 @@
 	    </li>
     <?php }
     	  else{?>
-    	    <li class="logreg"><a href="#"><?php echo $_SESSION['username'];?></a>
+    	    <li class="logreg"><a href="#"><?php echo "Welcome, " .  $_SESSION['username'];?></a>
     	    	<ul class="account">
     	    		<li>
     	    			<div id="loginBox">
@@ -179,6 +179,8 @@
   <div class="empty-container">
     <div>Tournaments</div>
   </div>
+  
+  
   <div class="content-box-tournament accent"><br>
   	<?php
 	  		require('BinaryBeast.php');
@@ -192,15 +194,68 @@
 			$_SESSION['tournament_url'] = $tournament->url;
 			$_SESSION['tournament_status'] = $tournament->status;
 			$_SESSION['teams_joined_count'] = $tournament->teams_joined_count;
+			
+			$message = "";
+			switch($_SESSION['tournament_status']){
+				case "Building":
+					$message = "THIS TOURNAMENT IS CURRENTLY ACCEPTING SIGN-UPS<br />";
+					$teams = $tournament->teams();
+					$signupStatus = "YOU HAVE NOT SIGNED UP FOR THIS TOURNAMENT";
+					foreach($teams as $team){
+						if($team->display_name == $_SESSION['battlenetid']){
+							$signupStatus = "YOU ARE SIGNED UP FOR THIS TOURNAMENT";
+							break;
+						}
+					}
+					$message .= $signupStatus;
+					break;
+				case "Active":
+					$message = "YOUR OPPPONENT<br />";
+					break;
+				case "Complete":
+					$message = "NEXT TOURNAMENT IN<br />";
+					break;
+			}
   		
   	?>
   	
   	<div id="opponent">
-  		YOUR OPPONENT<br />
+  		<?php echo $message; ?><br />
+  		
+  		<!-- If there is a tournament coming up, display the time until it starts. -->
+  		<?php if($_SESSION['tournament_status'] == "Complete"){ ?>
+  		<div class="accent" id="heroA_banner_tourney">
+  		<div id="heroA-banner-subright-tourney">
+  		<div id="clock"></div>
+		      <script type="text/javascript">
+		var nextYear = new Date(new Date().getFullYear() + 1, 0, 0, 0, 0, 0, 0);
+		$('#clock').countdown('2014/10/10', function(event) {
+		  var $this = $(this).html(event.strftime(''
+		    + '<table>'
+		    + '<tr>'
+		    + '<td><span>%D</span>&nbsp<span>:</span></td>'
+		    + '<td><span>%H</span>&nbsp<span>:</span></td>'
+		    + '<td><span>%M</span>&nbsp&nbsp<span>:</span></td>'
+		    + '<td><span>%S</span>&nbsp<span>&nbsp</span></td>'
+		    + '</tr>'
+		    + '<tr>'
+		    + '<td><div class="clockLabel" id="daysLabel">DAYS</div></td>'
+		    + '<td><div class="clockLabel">HOURS</div></td>'
+		    + '<td><div class="clockLabel">MINUTES</div></td>'
+		    + '<td><div class="clockLabel" id="secondsLabel">SECONDS</div></td>'
+		    + '</tr>'
+		    + '</table>'));
+		});
+		</script> 
+		</div>
+		</div>
+		<?php } ?>
+  		
   		<span id="opponent-text"></span>
   	</div>
+  	<?php if($_SESSION['tournament_status'] == "Active"){ ?>
   	<button onclick="tourney('lost')" class="tournament">I Lost</button><br />
-  	<?php
+  	<?php }
   	if($_SESSION['admin'] == 1){ ?>
   		<button onclick="tourney('create')" class="tournament" style="float: left">Create Tournament</button>
   	<?php } ?>

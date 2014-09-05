@@ -101,3 +101,4 @@
 [27-Aug-2014 00:52:26 America/Los_Angeles] PHP Fatal error:  Call to a member function set_loser() on a non-object in /home/cbgaming/public_html/dev/tournament/tourney.php on line 108
 [27-Aug-2014 00:52:55 America/Los_Angeles] PHP Fatal error:  Call to a member function set_loser() on a non-object in /home/cbgaming/public_html/dev/tournament/tourney.php on line 108
 [27-Aug-2014 00:53:17 America/Los_Angeles] PHP Fatal error:  Call to a member function set_loser() on a non-object in /home/cbgaming/public_html/dev/tournament/tourney.php on line 108
+[01-Sep-2014 00:43:38 America/Los_Angeles] PHP Fatal error:  Call to a member function confirm() on a non-object in /home/cbgaming/public_html/tournament/tourney.php on line 67

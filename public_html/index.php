@@ -109,7 +109,7 @@
 	    </li>
     <?php }
     	  else{?>
-    	    <li class="logreg"><a href="#"><?php echo $_SESSION['username'];?></a>
+    	    <li class="logreg"><a href="#"><?php echo "Welcome, " . $_SESSION['username'];?></a>
     	    	<ul class="account">
     	    		<li>
     	    			<div id="loginBox">
@@ -172,14 +172,9 @@ $('#clock').countdown('2014/10/10', function(event) {
 	  	<iframe frameborder="0" style="overflow:hidden; height: 265px; width: 100%;" src="./scroller.html" scrolling="no"></iframe>
 	  </div>
 	  <div id="twitter-div" style="padding: 2px;">
-		<a class="twitter-timeline" href="https://twitter.com/CBlackgaming" data-widget-id="505510568359260160">Tweets by @CBlackgaming</a>
+	 <a class="twitter-timeline" href="https://twitter.com/CBlackgaming" data-widget-id="">Tweets by @CBlackgaming</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-	</div>
-	<script type="text/css">
-		$("#twitter-div").css("padding", "2px");
-	</script>
+	  </div>
 </div>
 </body>
 </html>
